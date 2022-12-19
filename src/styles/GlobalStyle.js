@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import { backgroundColor } from "../constants/colors"
 
 const GlobalStyle = createGlobalStyle`
     html, body, div, span, applet, object, iframe,
@@ -27,7 +28,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
+    background-color:${backgroundColor}
 }
 ol, ul {
 	list-style: none;
