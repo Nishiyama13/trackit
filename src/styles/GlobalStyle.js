@@ -47,22 +47,28 @@ table {
 	border-spacing: 0;
 }
 button {
-	height: 43px;
-	
-	border-radius: 3px;
+	height: 70px;
 	border-style: none;
-	font-family: 'Roboto';
+	font-family: 'Lexend Deca';
 	font-size: 18px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	color: #FFFFFF;
 	padding: 0 20px;
 	&:disabled {
 		background-color: lightgray;
 	}
 }
+	
+}
+`
+
+export default GlobalStyle
+
+/*
+
+
 input {
 	background: #FFFFFF;
 	border: 1px solid #D5D5D5;
@@ -77,11 +83,5 @@ input {
 	align-items: center;
 	&::placeholder{
 		font-style: italic;
-	}
-	
-}
-`
-
-export default GlobalStyle
-
-//background: ${accentColor};
+    }
+    */
