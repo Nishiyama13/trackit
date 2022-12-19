@@ -17,8 +17,8 @@ display: flex;
 background-color: #FFF;
 justify-content: space-around;
 
-
-    color: #52B6FF
-
+.button{
+    color: ${secondColor};
+}
 
 ` 
