@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components"
-import { backgroundColor } from "../constants/colors"
+import { createGlobalStyle } from "styled-components";
+import { backgroundColor } from "../constants/colors";
 
 const GlobalStyle = createGlobalStyle`
     html, body, div, span, applet, object, iframe,
@@ -46,6 +46,38 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+	input {
+	background: #FFFFFF;
+	border: 1px solid #D5D5D5;
+
+	height: 45px;
+	width: 303px;
+	border-radius: 5px;
+	
+	margin-bottom: 6px;
+	margin-top: 10px;
+	
+
+	font-family: 'Lexend Deca';
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 25px;
+	letter-spacing: 0em;
+	text-align: left;
+
+	display: flex;
+	align-items: center;
+	&::placeholder{
+		font-style: italic;
+    }
+}
+`;
+
+export default GlobalStyle;
+
+/*
+
 button {
 	height: 70px;
 	border-style: none;
@@ -57,31 +89,8 @@ button {
 	text-align: center;
 	padding: 0 20px;
 	&:disabled {
-		background-color: lightgray;
+		background-color: #c02828;
 	}
 }
-	
-}
-`
 
-export default GlobalStyle
-
-/*
-
-
-input {
-	background: #FFFFFF;
-	border: 1px solid #D5D5D5;
-	border-radius: 3px;
-	height: 50px;
-	margin-bottom: 25px;
-	margin-top: 10px;
-	padding: 0 10px;
-	font-family: 'Roboto';
-	font-size: 18px;
-	display: flex;
-	align-items: center;
-	&::placeholder{
-		font-style: italic;
-    }
     */
