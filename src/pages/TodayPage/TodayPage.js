@@ -5,9 +5,12 @@ import { BASE_URL } from "../../constants/urls";
 import axios from "axios";
 //https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today
 import AuthContext from "../contexts/AuthContext";
+import UserContext from "../../contexts/UserContext";
 
 export default function TodayPage() {
   const { token } = useContext(AuthContext);
+  const { user } = useContext(UserContext);
+
   useEffect(() => {
     const url = `${BASE_URL}/habits/today`;
     const config = { headers: { Authorization: `Bearer ${token}` } };
@@ -19,7 +22,7 @@ export default function TodayPage() {
 
   return (
     <ContainerToday>
-      <h1>TodayPage</h1>
+      <h1>{user.name}</h1>
     </ContainerToday>
   );
 }

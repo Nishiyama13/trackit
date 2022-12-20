@@ -6,15 +6,16 @@ import UserContext from "../../contexts/UserContext";
 export default function NavBar() {
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
+
   function habitosWay() {
     navigate("/habitos");
   }
+
   function historicoWay() {
     navigate("/historico");
   }
-
-  if (user !== {}) {
-    <NavBarContainer></NavBarContainer>;
+  if (user === {}) {
+    return <NavBarContainer> NavBar</NavBarContainer>;
   } else {
     return (
       <NavBarContainer>
@@ -27,3 +28,9 @@ export default function NavBar() {
     );
   }
 }
+
+/*  if (user !== {}) {
+    return <NavBarContainer></NavBarContainer>;
+  } else {
+      }
+      */

@@ -3,6 +3,7 @@ import { HeaderContainer } from "./styled";
 import logoSmall from "../../assets/logoSmall.png";
 //import imgteste from "../../assets/imgteste.png";
 import UserContext from "../../contexts/UserContext";
+
 export default function Header() {
   const { user } = useContext(UserContext);
   console.log(user.data);
