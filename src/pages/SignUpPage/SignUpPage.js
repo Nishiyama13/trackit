@@ -1,8 +1,8 @@
-//import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ContainerSignUp, Button } from "./styled";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import logoBig from "../../assets/logoBig.png";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -26,7 +26,7 @@ export default function LoginPage() {
   }
   return (
     <ContainerSignUp>
-      <h1>colocar logo</h1>
+      <img src={logoBig} />
 
       <form onSubmit={createAccount}>
         <input
@@ -60,6 +60,7 @@ export default function LoginPage() {
 
         <Button type="submit">Cadastrar</Button>
       </form>
+      <Link to="/">Já possui uma conta? Faça login</Link>
     </ContainerSignUp>
   );
 }

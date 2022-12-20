@@ -75,22 +75,3 @@ table {
 `;
 
 export default GlobalStyle;
-
-/*
-
-button {
-	height: 70px;
-	border-style: none;
-	font-family: 'Lexend Deca';
-	font-size: 18px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	padding: 0 20px;
-	&:disabled {
-		background-color: #c02828;
-	}
-}
-
-    */
