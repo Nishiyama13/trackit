@@ -10,28 +10,22 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 export default function LoginPage() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({});
-  const url = `${BASE_URL}/auth/login`;
-  const [emailUser, setEmailUser] = useState("");
-  const [passwordUser, setPasswordUser] = useState("");
-  const user = {
-    email: "",
-    password: "",
-  }; //formato para envio
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   function login(e) {
     e.preventDefault();
-    user.email = emailUser;
-    user.password = passwordUser;
-    console.log(user);
+    const url = `${BASE_URL}/auth/login`;
+    const body = { email, password };
+    console.log(body);
 
-    setForm([...form, user]);
-    console.log(form);
-    if (user.email != "" && user.password != "") {
-      const promise = axios.post(url);
-      promise.then(() => navigate("/"));
-      promise.catch(err => console.log(err.response.data));
-    }
+    const promise = axios.post(url, body);
+    promise.then(res => {
+      console.log(res);
+      navigate("/hoje");
+    });
+    promise.catch(err => alert(err.response.data.message));
   }
 
   return (
@@ -44,8 +38,8 @@ export default function LoginPage() {
               id="email"
               type="email"
               placeholder="Digite seu email"
-              value={emailUser}
-              onChange={e => setEmailUser(e.target.value)}
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               required
             />
 
@@ -53,8 +47,8 @@ export default function LoginPage() {
               id="password"
               type="password"
               placeholder="Digite sua senha..."
-              value={passwordUser}
-              onChange={e => setPasswordUser(e.target.value)}
+              value={password}
+              onChange={e => setPassword(e.target.value)}
               required
             />
 
