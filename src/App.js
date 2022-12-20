@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import GlobalStyle from "./styles/GlobalStyle";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import LoginPage from "./pages/LoginPage/LoginPage";
@@ -9,7 +11,6 @@ import HabitsPage from "./pages/HabitsPage/HabitsPage";
 
 import AuthContext from "./contexts/AuthContext";
 import UserContext from "./contexts/UserContext";
-import { useState } from "react";
 
 export default function App() {
   const [token, setToken] = useState("");
@@ -19,6 +20,7 @@ export default function App() {
     <AuthContext.Provider value={{ token, setToken }}>
       <UserContext.Provider value={{ user, setUser }}>
         <BrowserRouter>
+          <GlobalStyle />
           <Header />
           <Routes>
             <Route path="/" element={<LoginPage />} />
